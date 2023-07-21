@@ -3,7 +3,7 @@
 
 *~
 *.autosave
-*.a
+#*.a
 *.core
 *.moc
 *.o
@@ -73,7 +73,7 @@ share/qtcreator/translations/qtcreator_untranslated.ts
 
 build
 debug
-lib/*
+#lib/*
 lib64/*
 release
 doc/html/*
@@ -152,3 +152,7 @@ tests/valgrind/memcheck/testapps/uninit3/uninit3
 tests/valgrind/memcheck/testrunner
 tests/valgrind/callgrind/callgrindparsertests
 tests/valgrind/callgrind/modeltest
+*.idx
+.qmake.stash
+.qtc_clangd/compile_commands.json
+tests/auto/ssh/target_wrapper.bat
