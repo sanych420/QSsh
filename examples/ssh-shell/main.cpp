@@ -39,11 +39,13 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
     bool parseSuccess;
-    const QSsh::SshConnectionParameters &parameters
+    QSsh::SshConnectionParameters parameters
         = ArgumentsCollector(app.arguments()).collect(parseSuccess);
     if (!parseSuccess)
         return EXIT_FAILURE;
+    parameters.authenticationType = QSsh::SshConnectionParameters::AuthenticationTypePassword;
     Shell shell(parameters);
     shell.run();
+    qDebug() << parameters.host() << parameters.userName() << parameters.port() << parameters.password();
     return app.exec();
 }
